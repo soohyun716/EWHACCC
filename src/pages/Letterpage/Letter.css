@@ -1,0 +1,20 @@
+/* 단과대별 이름 */
+.uni-name {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold; /* 글씨를 볼드체로 설정 */
+    color: #004A2F;
+    margin: 10px 0 10px 0; /* 위아래 간격 추가 */
+    position: relative; /* ::before 및 ::after에 위치 설정을 위해 추가 */
+}
+
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+}
+
