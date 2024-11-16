@@ -1,15 +1,14 @@
 import React, { useState, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Mainpage from './pages/Mainpage/Mainpage';
 import Footer from './components/Footer/Footer';
-
+import SwipeNavigator from './components/SwipeNavigator/SwipeNavigator';
 
 // 페이지 컴포넌트
 import Human from './pages/Letterpage/Human';
-//import Social from './pages/Letterpage/Social';
-//import Nature from './pages/Letterpage/Nature';
+import Social from './pages/Letterpage/Social';
+import Nature from './pages/Letterpage/Nature';
 
 
 // Reacr.lazy를 사용하여 FullscreenMenu를 지연로드
@@ -29,30 +28,29 @@ function App() {
     setIsMenuVisible(false);
   };
 
+
   return (
 
-      <Router>
-        <div className="app">
-          {/* 공통: 네비게이션 바 */}
-          <Navbar onMenuClick={openMenu} />
+    <Router>
+      <div className="app">
+        {/* 공통: 네비게이션 바 */}
+        <Navbar onMenuClick={openMenu} />
 
-          {/* 페이지 라우팅 설정 */}
-          <Routes>
-            <Route path="/" element={<Mainpage />} />
-            <Route path="/human" element={<Human />} />
-          </Routes>
+        {/* 라우팅 및 스와이프 기능 관리 */}
+        <SwipeNavigator />
 
-          {/* 필요시-> 풀스크린 메뉴: Suspense로 감싸서 로딩 중 상태처리 */}
-          {isMenuVisible && (
-            <Suspense fallback={<div>Loading...</div>}>
-              <FullscreenMenu onClose={closeMenu} />
-            </Suspense>
-          )}
+        {/* 필요시-> 풀스크린 메뉴: Suspense로 감싸서 로딩 중 상태처리 */}
+        {isMenuVisible && (
+          <Suspense fallback={<div>Loading...</div>}>
+            <FullscreenMenu onClose={closeMenu} />
+          </Suspense>
+        )}
 
-          {/* 공통: footer 인스타 주소 */}
-          <Footer />
-        </div>
-      </Router>
+        {/* 공통: footer 인스타 주소 */}
+        <Footer />
+
+      </div>
+    </Router>
 
 
   );
