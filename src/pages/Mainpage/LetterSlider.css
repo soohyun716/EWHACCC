@@ -1,7 +1,7 @@
 /* 편지 이미지 슬라이더 스타일 */
 .letter-slider {
   position: relative;
-  width: 90%; /* 부모 요소의 너비에 맞추기 */
+  width: 100%; /* 부모 요소의 너비에 맞추기 */
   height: 100%; /* 화면 높이에 맞게 설정, 필요에 따라 조정 */
   overflow: hidden;
   padding: 30px;
