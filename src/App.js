@@ -1,5 +1,6 @@
 import React, { useState, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { TouchProvider } from './context/TouchContext'; 
 import Navbar from './components/Navbar/Navbar';
 import Mainpage from './pages/Mainpage/Mainpage';
 import Footer from './components/Footer/Footer';
@@ -9,7 +10,12 @@ import SwipeNavigator from './components/SwipeNavigator/SwipeNavigator';
 import Human from './pages/Letterpage/Human';
 import Social from './pages/Letterpage/Social';
 import Nature from './pages/Letterpage/Nature';
-
+import Tech from './pages/Letterpage/Teach';
+import Music from './pages/Letterpage/Music';
+import Teach from './pages/Letterpage/Teach';
+import Business from './pages/Letterpage/Business';
+import Hokma from './pages/Letterpage/Hokma';
+import Med from './pages/Letterpage/Med';
 
 // Reacr.lazy를 사용하여 FullscreenMenu를 지연로드
 const FullscreenMenu = React.lazy(() => import('./components/FullscreenMenu/FullscreenMenu'));
@@ -30,29 +36,28 @@ function App() {
 
 
   return (
+    <TouchProvider>
+      <Router>
+        <div className="app">
+          {/* 공통: 네비게이션 바 */}
+          <Navbar onMenuClick={openMenu} />
 
-    <Router>
-      <div className="app">
-        {/* 공통: 네비게이션 바 */}
-        <Navbar onMenuClick={openMenu} />
+          {/* 라우팅 및 스와이프 기능 관리 */}
+          <SwipeNavigator />
 
-        {/* 라우팅 및 스와이프 기능 관리 */}
-        <SwipeNavigator />
+          {/* 필요시-> 풀스크린 메뉴: Suspense로 감싸서 로딩 중 상태처리 */}
+          {isMenuVisible && (
+            <Suspense fallback={<div>Loading...</div>}>
+              <FullscreenMenu onClose={closeMenu} />
+            </Suspense>
+          )}
 
-        {/* 필요시-> 풀스크린 메뉴: Suspense로 감싸서 로딩 중 상태처리 */}
-        {isMenuVisible && (
-          <Suspense fallback={<div>Loading...</div>}>
-            <FullscreenMenu onClose={closeMenu} />
-          </Suspense>
-        )}
+          {/* 공통: footer 인스타 주소 */}
+          <Footer />
 
-        {/* 공통: footer 인스타 주소 */}
-        <Footer />
-
-      </div>
-    </Router>
-
-
+        </div>
+      </Router>
+      </TouchProvider>
   );
 }
 

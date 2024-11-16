@@ -5,7 +5,7 @@ function MainSlider() {
   // 슬라이드 인덱스를 상태로 관리
   const [mainIndex, setMainIndex] = useState(0);
 
-  // 슬라이드 이미지 배열 (예제)
+  // 슬라이드 이미지 배열 
   const slides = [
     '/image/main1.png',    
     '/image/main2.png',

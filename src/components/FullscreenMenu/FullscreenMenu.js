@@ -18,7 +18,7 @@ function FullscreenMenu({ onClose }) {
                 <a href="/tech">공과/인공지능대학</a>
                 <a href="/music">음악/조형예술대학</a>
                 <a href="/teach">사범대학</a>
-                <a href="/manage">경영/신산업융합대학</a>
+                <a href="/business">경영/신산업융합대학</a>
                 <a href="/hokma">호크마교양대학</a>
                 <a href="/med">약학/스크랜튼대학</a>
             </div >
