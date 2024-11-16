@@ -3,9 +3,10 @@ import './LetterTitle.css';
 
 function LetterTitle() {
     return (
-        <header class="title">
-            <img src="static/image/title-image.png" alt="Title Image"/>
-        </header>
+        <div className="title">
+            {/* 편지 타이틀 */}
+            <img src="/image/title-image.png" alt="Title Image" />
+        </div>
     );
 }
 

@@ -4,7 +4,7 @@ import './Letter.css';
 
 function Human() {
     return (
-        <div className="content">
+        <div>
             {/* 공통 타이틀 */}
             <LetterTitle />
 
@@ -13,10 +13,8 @@ function Human() {
 
             {/* 편지 사진 갤러리 */}
             <section className="gallery">
-                <div className="photo-container">
-                    <div id="uni_human" className="photo-set">
-                        <img src="/image/human1.png" alt="편지사진" />
-                    </div>
+                <div id="uni_human" className="photo-set">
+                    <img src="/image/human1.png" alt="편지사진" />
                 </div>
             </section >
         </div >

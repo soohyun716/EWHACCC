@@ -1,56 +1,6 @@
-/* 메인이미지 슬라이더 스타일 */
-.main-slider-container {
-    padding-top: 65px; /* 네비게이션 바의 높이만큼 여백 추가 */
-    width:100%;
-    overflow: hidden; /* 슬라이더 외부 이미지 숨기기 */
-    position: relative;
-}
-
-.main-slider {
-    display: flex;
-    transition: transform 1s ease-in-out; /* 이미지 넘어가는 속도 1초 */ 
-}
-
-.main-slide {
-    min-width: 100%; /* 슬라이드가 전체 화면을 차지하도록 */
-}
-
-.main-slide img {
-    width: 100%;
-    height: auto;
-    opacity: 0.9;
-}
-
-
 /* start 안내 멘트 */
 .start {
     padding: 30px;
     color:#003723;
     text-align: center;
-}
-
-/* 편지 사진 슬라이더 스타일 */
-.letter-slider-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 50px auto;
-    overflow: hidden;
-}
-
-.letter-slider {
-    display:flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.letter-slide {
-    min-width: 200px; /* 각 사진 너비 */
-    margin: 0 10px; /* 사진 간의 간격 */
-}
-
-.letter-slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
