@@ -21,7 +21,7 @@ function LetterSlider() {
     e.preventDefault();
     const slider = sliderRef.current;
     const x = e.touches[0].clientX - slider.offsetLeft;
-    const walk = (x - startX) * 20; // 터치 이동에 따라 스크롤 속도를 설정
+    const walk = (x - startX) * 2000; // 터치 이동에 따라 스크롤 속도를 설정
     slider.scrollLeft = scrollLeft - walk;
   };
 
