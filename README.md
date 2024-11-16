@@ -2,7 +2,10 @@
 This is a repository of EWHACCC practice
 I am adding a line to README here!
 
-프로젝트 구조도
+
+
+[프로젝트 구조도]
+
 src/
 │
 ├── index.js          // 프로젝트의 유일한 엔트리 포인트
