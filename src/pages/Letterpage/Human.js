@@ -15,9 +15,6 @@ function Human() {
             <section className="gallery">
                 <div id="uni_human" className="photo-set">
                     <img src="/image/human1.png" alt="편지사진" />
-                    <img src="/image/human1.png" alt="편지사진" />
-                    <img src="/image/human1.png" alt="편지사진" />
-
                 </div>
             </section >
         </div >

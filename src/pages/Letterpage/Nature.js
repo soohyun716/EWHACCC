@@ -14,7 +14,7 @@ function Nature() {
             {/* 편지 사진 갤러리 */}
             <section className="gallery">
                 <div id="uni_human" className="photo-set">
-                    <img src="/image/teach1.png" alt="편지사진" />
+                    <img src="/image/nature1.png" alt="편지사진" />
                 </div>
             </section >
         </div >

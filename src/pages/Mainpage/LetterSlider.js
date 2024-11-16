@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react';
-import './LetterSlider.css'; // 슬라이드 스타일을 정의하는 CSS 파일
+import React, { useRef, useState, useContext } from 'react';
+import { TouchContext } from '../../context/TouchContext'; 
+import './LetterSlider.css'; 
 
 function LetterSlider() {
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  const { isDragging, setIsDragging, startX, setStartX, scrollLeft, setScrollLeft } = useContext(TouchContext); // Context 사용
   const sliderRef = useRef(null);
+
 
   // 터치 시작 이벤트 핸들러
   const handleTouchStart = (e) => {
