@@ -1,5 +1,6 @@
 /* 편지 페이지 공통 타이틀 이미지 */
 .title img {
+    margin: 70px 0px 0px 0px;
     width: 100%;
     height: flex;
     display: flex;

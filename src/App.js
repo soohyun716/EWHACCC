@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Mainpage from './pages/Mainpage/Mainpage';
 import Footer from './components/Footer/Footer';
 
+
 // 페이지 컴포넌트
 import Human from './pages/Letterpage/Human';
 //import Social from './pages/Letterpage/Social';
@@ -29,33 +30,31 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="app">
-        {/* 공통: 네비게이션 바 */}
-        <Navbar onMenuClick={openMenu} />
 
-        {/* 메인 페이지 */}
+      <Router>
+        <div className="app">
+          {/* 공통: 네비게이션 바 */}
+          <Navbar onMenuClick={openMenu} />
+
+          {/* 페이지 라우팅 설정 */}
+          <Routes>
+            <Route path="/" element={<Mainpage />} />
+            <Route path="/human" element={<Human />} />
+          </Routes>
+
+          {/* 필요시-> 풀스크린 메뉴: Suspense로 감싸서 로딩 중 상태처리 */}
+          {isMenuVisible && (
+            <Suspense fallback={<div>Loading...</div>}>
+              <FullscreenMenu onClose={closeMenu} />
+            </Suspense>
+          )}
+
+          {/* 공통: footer 인스타 주소 */}
+          <Footer />
+        </div>
+      </Router>
 
 
-        {/* 페이지 라우팅 설정 */}
-        <Routes>
-          <Route path="/" element={<Mainpage />} />
-          <Route path="/human" element={<Human />} />
-
-          {/* 추가 페이지 경로를 여기에 추가 */}
-        </Routes>
-
-        {/* 필요시-> 풀스크린 메뉴: Suspense로 감싸서 로딩 중 상태처리 */}
-        {isMenuVisible && (
-          <Suspense fallback={<div>Loading...</div>}>
-            <FullscreenMenu onClose={closeMenu} />
-          </Suspense>
-        )}
-
-        {/* 공통: footer 인스타 주소 */}
-        <Footer />
-      </div>
-    </Router>
   );
 }
 
