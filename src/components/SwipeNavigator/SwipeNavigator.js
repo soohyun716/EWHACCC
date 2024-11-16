@@ -35,33 +35,53 @@ function SwipeNavigator() {
         const diffX = startX - currentX;
 
 
-        // 스와이프 거리가 일정 기준 이상일 때 페이지 전환
-        const routes = [
-            '/',
-            '/human',
-            '/social',
-            '/nature',
-            '/tech',
-            '/music',
-            '/teach',
-            '/business',
-            '/hokma',
-            '/med',
-          ];
-          
-          const handleSwipe = (diffX) => {
-            const currentIndex = routes.indexOf(location.pathname);
-          
-            if (diffX > 170) { // 왼쪽으로 스와이프 (다음 페이지)
-              const nextIndex = (currentIndex + 1) % routes.length;
-              navigate(routes[nextIndex]);
-            } else if (diffX < -170) { // 오른쪽으로 스와이프 (이전 페이지)
-              const prevIndex = (currentIndex - 1 + routes.length) % routes.length;
-              navigate(routes[prevIndex]);
+          // 스와이프 거리가 일정 기준 이상일 때 페이지 전환
+          if (diffX > 170) { // 왼쪽으로 스와이프 (다음 페이지)
+            if (location.pathname === '/') {
+                navigate('/human');
+            } else if (location.pathname === '/human') {
+                navigate('/social');
+            } else if (location.pathname === '/social') {
+                navigate('/nature');
+            } else if (location.pathname === '/nature') {
+                navigate('/tech');
+            } else if (location.pathname === '/tech') {
+                navigate('/music');
+            } else if (location.pathname === '/music') {
+                navigate('/teach');
+            } else if (location.pathname === '/teach') {
+                navigate('/business');
+            } else if (location.pathname === '/business') {
+                navigate('/hokma');
+            } else if (location.pathname === '/hokma') {
+                navigate('/med');
+            } else if (location.pathname === '/med') {
+                navigate('/');
             }
-            
             setIsDragging(false);
-          };
+        } else if (diffX < -170) { // 오른쪽으로 스와이프 (이전 페이지)
+            if (location.pathname === '/med') {
+                navigate('/hokma');
+            } else if (location.pathname === '/hokma') {
+                navigate('/business');
+            } else if (location.pathname === '/business') {
+                navigate('/teach');
+            } else if (location.pathname === '/teach') {
+                navigate('/music');
+            } else if (location.pathname === '/music') {
+                navigate('/tech');
+            } else if (location.pathname === '/tech') {
+                navigate('/nature');
+            } else if (location.pathname === '/nature') {
+                navigate('/social');
+            } else if (location.pathname === '/social') {
+                navigate('/human');
+            } else if (location.pathname === '/human') {
+                navigate('/');
+            }
+            setIsDragging(false);
+        }
+
     };
 
     // 터치 끝 이벤트 핸들러
