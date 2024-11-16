@@ -27,7 +27,7 @@ function SwipeNavigator() {
         const diffX = startX - currentX;
 
         // 스와이프 거리가 일정 기준 이상일 때 페이지 전환
-        if (diffX > 150) { // 왼쪽으로 스와이프 (다음 페이지)
+        if (diffX > 250) { // 왼쪽으로 스와이프 (다음 페이지)
             if (location.pathname === '/') {
                 navigate('/human');
             } else if (location.pathname === '/human') {
@@ -38,7 +38,7 @@ function SwipeNavigator() {
                 navigate('/');
             }
             setIsDragging(false);
-        } else if (diffX < -150) { // 오른쪽으로 스와이프 (이전 페이지)
+        } else if (diffX < -250) { // 오른쪽으로 스와이프 (이전 페이지)
             if (location.pathname === '/nature') {
                 navigate('/social');
             } else if (location.pathname === '/social') {
