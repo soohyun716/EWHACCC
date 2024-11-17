@@ -11,8 +11,8 @@ function LetterSlider() {
   const handleTouchStart = (e) => {
     const slider = sliderRef.current;
     setIsDragging(true);
-    setStartX(e.touches[0].clientX - slider.offsetLeft);
-    setScrollLeft(slider.scrollLeft);
+    setStartX(e.touches[0].clientY - slider.offsetTop);
+    setScrollLeft(slider.scrollTop);
   };
 
   // 터치 이동 이벤트 핸들러
@@ -20,9 +20,9 @@ function LetterSlider() {
     if (!isDragging) return;
     e.preventDefault();
     const slider = sliderRef.current;
-    const x = e.touches[0].clientX - slider.offsetLeft;
-    const walk = (x - startX) * 2; // 터치 이동에 따라 스크롤 속도를 설정
-    slider.scrollLeft = scrollLeft - walk;
+    const y = e.touches[0].clientY - slider.offsetTop;
+    const walk = (y - startX) * 2; // 터치 이동에 따라 스크롤 속도를 설정
+    slider.scrollTop = scrollLeft - walk;
   };
 
   // 터치 끝 이벤트 핸들러
@@ -34,7 +34,7 @@ function LetterSlider() {
     <div
       className="letter-slider"
       ref={sliderRef}
-      style={{ overflowX: 'scroll', display: 'flex', scrollbarWidth: 'none' }}
+      style={{ overflowY: 'scroll', display: 'flex', flexDirection: 'column', scrollbarWidth: 'none' }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
