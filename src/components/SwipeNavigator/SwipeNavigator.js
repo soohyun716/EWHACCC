@@ -35,8 +35,8 @@ function SwipeNavigator() {
         const diffX = startX - currentX;
 
 
-          // 스와이프 거리가 일정 기준 이상일 때 페이지 전환
-          if (diffX > 170) { // 왼쪽으로 스와이프 (다음 페이지)
+        // 스와이프 거리가 일정 기준 이상일 때 페이지 전환
+        if (diffX > 170) { // 왼쪽으로 스와이프 (다음 페이지)
             if (location.pathname === '/') {
                 navigate('/human');
             } else if (location.pathname === '/human') {
