@@ -78,6 +78,8 @@ function SwipeNavigator() {
                 navigate('/human');
             } else if (location.pathname === '/human') {
                 navigate('/');
+            } else if (location.pathname === '/') {
+                navigate('/med');
             }
             setIsDragging(false);
         }
