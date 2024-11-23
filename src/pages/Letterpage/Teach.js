@@ -20,6 +20,8 @@ function Teach() {
                     <img src="/image/teach4.png" alt="편지사진" />
                     <img src="/image/teach5.png" alt="편지사진" />
                     <img src="/image/teach6.png" alt="편지사진" />
+                    <img src="/image/teach7.png" alt="편지사진" />
+
                 </div>
             </section >
         </div >
