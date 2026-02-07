@@ -47,9 +47,9 @@ function LetterSlider() {
       {[
         { img: "/image/hokma1.png", link: "/hokma" },
         { img: "/image/human1.png", link: "/human" },
-        { img: "/image/teach1.png", link: "/teach1" },
-        { img: "/image/teach2.png", link: "/teach2" },
-        { img: "/image/teach3.png", link: "/teach3" },
+        { img: "/image/teach1.png", link: "/teach" },
+        { img: "/image/teach2.png", link: "/teach" },
+        { img: "/image/teach3.png", link: "/teach" },
       ].map((slide, index) => (
         <Link key={index} to={slide.link} style={{ width: "100%" }}>
           <img
