@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './LetterSlider.css'; // 슬라이드 스타일을 정의하는 CSS 파일
+import { Link } from 'react-router-dom';
 
 function LetterSlider() {
   const [isDragging, setIsDragging] = useState(false);
@@ -34,24 +35,35 @@ function LetterSlider() {
     <div
       className="letter-slider"
       ref={sliderRef}
-      style={{ overflowX: 'scroll', display: 'flex', scrollbarWidth: 'none' }}
+      style={{
+        overflowY: "scroll",
+        display: "flex",
+        flexDirection: "column",
+        scrollbarWidth: "none",
+      }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {['/image/hokma1.png', '/image/human1.png', '/image/teach1.png', '/image/teach2.png', '/image/teach3.png'].map(
-        (slide, index) => (
+      {[
+        { img: "/image/hokma1.png", link: "/hokma" },
+        { img: "/image/human1.png", link: "/human" },
+        { img: "/image/teach1.png", link: "/teach" },
+        { img: "/image/teach2.png", link: "/teach" },
+        { img: "/image/teach3.png", link: "/teach" },
+      ].map((slide, index) => (
+        <Link key={index} to={slide.link} style={{ width: "100%" }}>
           <img
-            key={index}
-            src={slide}
+            src={slide.img}
             alt={`Slide ${index + 1}`}
             className="letter-slide"
-            style={{ width: '100%', flexShrink: 0 }} // 이미지 너비는 원하는 크기로 설정
+            style={{ width: "100%", flexShrink: 0, cursor: "pointer" }}
           />
-        )
-      )}
+        </Link>
+      ))}
     </div>
   );
 }
+
 
 export default LetterSlider;
