@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useNavigate, Routes, Route, useLocation } from 'react-router-dom';
 import { TouchContext } from '../../context/TouchContext';
 import './SwipeNavigator'
