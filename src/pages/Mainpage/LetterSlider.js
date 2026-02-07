@@ -1,5 +1,6 @@
 import React, { useRef, useContext } from 'react';
 import { TouchContext } from '../../context/TouchContext'; 
+import { Link } from 'react-router-dom';
 import './LetterSlider.css'; 
 
 function LetterSlider() {
