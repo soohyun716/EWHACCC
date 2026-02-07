@@ -1,21 +1,10 @@
 import React, { useState, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { TouchProvider } from './context/TouchContext'; 
 import Navbar from './components/Navbar/Navbar';
-import Mainpage from './pages/Mainpage/Mainpage';
 import Footer from './components/Footer/Footer';
 import SwipeNavigator from './components/SwipeNavigator/SwipeNavigator';
 
-// 페이지 컴포넌트
-import Human from './pages/Letterpage/Human';
-import Social from './pages/Letterpage/Social';
-import Nature from './pages/Letterpage/Nature';
-import Tech from './pages/Letterpage/Teach';
-import Music from './pages/Letterpage/Music';
-import Teach from './pages/Letterpage/Teach';
-import Business from './pages/Letterpage/Business';
-import Hokma from './pages/Letterpage/Hokma';
-import Med from './pages/Letterpage/Med';
 
 // Reacr.lazy를 사용하여 FullscreenMenu를 지연로드
 const FullscreenMenu = React.lazy(() => import('./components/FullscreenMenu/FullscreenMenu'));
