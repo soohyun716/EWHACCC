@@ -1,14 +1,8 @@
 import React, { useState, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Mainpage from './pages/Mainpage/Mainpage';
 import Footer from './components/Footer/Footer';
 import SwipeNavigator from './components/SwipeNavigator/SwipeNavigator';
-
-// 페이지 컴포넌트
-import Human from './pages/Letterpage/Human';
-import Social from './pages/Letterpage/Social';
-import Nature from './pages/Letterpage/Nature';
 
 
 // Reacr.lazy를 사용하여 FullscreenMenu를 지연로드
