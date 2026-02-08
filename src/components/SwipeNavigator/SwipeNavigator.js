@@ -14,8 +14,6 @@ import Hokma from '../../pages/Letterpage/Hokma';
 import Med from '../../pages/Letterpage/Med';
 
 
-// 다른 페이지도 필요에 따라 임포트하세요
-
 function SwipeNavigator() {
     const navigate = useNavigate();
     const location = useLocation(); // 현재 페이지 경로를 가져옴
@@ -109,7 +107,6 @@ function SwipeNavigator() {
                 <Route path="/business" element={<Business />} />
                 <Route path="/hokma" element={<Hokma />} />
                 <Route path="/med" element={<Med />} />
-                {/* 다른 페이지 라우팅을 추가하세요 */}
             </Routes>
         </div>
     );
